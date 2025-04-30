@@ -1,0 +1,26 @@
+{
+    // How consistent formatting is achieved (dont auto-save, unless you can CI, it's kinda jank)
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "organizeImports": "always"
+        }
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "mypy.runUsingActiveInterpreter": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "ruff.organizeImports": true,
+    // Fixes mypy crashes in some cases
+    "mypy.env": {
+        "PYTHONIOENCODING": "utf8"
+    },
+    // Convenience
+    "python.analysis.autoImportCompletions": true,
+    // Tests
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+}
