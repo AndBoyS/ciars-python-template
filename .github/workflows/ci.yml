@@ -20,11 +20,12 @@ jobs:
       uses: astral-sh/setup-uv@v5
       with:
         version: "0.7.1"
-    - uses: actions/cache@v3
-      name: Cache venv
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+    - name: "Set up Python"
+      uses: actions/setup-python@v5
       with:
-        path: ./.venv
-        key: venv-${{ hashFiles('uv.lock') }}
+        python-version-file: ".python-version"
     - name: Mypy type checking
       run: uv run mypy .
     - name: Ruff linter
